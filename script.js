@@ -3,10 +3,10 @@
 
 const api_url = 'https://api.covid19api.com/summary';
 const submitBtn = document.querySelector('.submit');
-submitBtn.addEventListener('submit', fetchResults);
-let countryArray;
 
+let countryArray;
 const fetchResults = () => {
+submitBtn.addEventListener('submit', fetchResults);
 
  fetch(api_url)
         .then ((res) => res.json())
@@ -30,7 +30,9 @@ const factsDisplay = document.querySelector(".myData");
 
         ctry.text = countryArray;
 
-        console.log(function);
+       
+
+
         factsDisplay.appendChild(div);
         div.appendChild(ctry);        
 
@@ -45,5 +47,5 @@ const factsDisplay = document.querySelector(".myData");
            
  };
 
-
+fetchResults()
 
